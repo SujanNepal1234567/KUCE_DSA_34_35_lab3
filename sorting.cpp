@@ -1,4 +1,5 @@
 #include<iostream>
+#include<algorithm>
 using namespace std;
 
 void Heapify(int a[],int n,int i){
@@ -6,14 +7,15 @@ void Heapify(int a[],int n,int i){
 	largest = i;
 	l=2*i+1;
 	r = 2*i+2;
-	if(l<n && a[i]<a[l]){
+	if(l<n && a[largest]<a[l]){
 		largest = l;
 	}
 	if(r<n && a[largest]<a[r]){
 		largest = r;
 	}
 	if(largest!=i){
-		swap(a[i], a[largest]); 
+		swap(a[i], a[largest]);
+		Heapify(a,n,largest); 
 
 	}
 }
@@ -27,7 +29,7 @@ void build_heap(int a[]){
 }
 
 void HeapSort(int a[]){
-	int i,n,temp;
+	int i,n;
 	n = 10;
 	build_heap(a);
 	for(i=n-1;i>=0;i--){
