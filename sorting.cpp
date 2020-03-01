@@ -32,27 +32,15 @@ void HeapSort(int a[]){
 	int i,n;
 	n = 10;
 	build_heap(a);
-	cout<<"after building heap"<<endl;
-	for(int i = 0 ; i<10;i++){
-		cout<<a[i];
-		cout<<endl;
-	}
+	
 	for(i=n-1;i>=0;i--){
 		swap(a[i], a[0]); 
 		Heapify(a,i,0);
-		cout<<"after heapify"<<i<<endl;
-		for(int i = 0 ; i<10;i++){
-		cout<<a[i];
-		cout<<endl;
-		}
+		
 		
 	}
 	
-	cout<<"after :::::::::"<<endl;
-	for(int i = 0 ; i<10;i++){
-		cout<<a[i];
-		cout<<endl;
-	}
+	
 }
 
 int main(){
